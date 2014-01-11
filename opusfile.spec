@@ -1,12 +1,12 @@
 Summary:	Library for decoding .opus files, including seeking support
 Summary(pl.UTF-8):	Biblioteka do dekodowania plików .opus wraz z obsługą przewijania
 Name:		opusfile
-Version:	0.4
+Version:	0.5
 Release:	1
 License:	BSD
 Group:		Libraries
 Source0:	http://downloads.xiph.org/releases/opus/%{name}-%{version}.tar.gz
-# Source0-md5:	80f3d4106106905255ff84def1b5d9ae
+# Source0-md5:	6c96ae240ada27fafff423f96a8814cb
 URL:		http://opus-codec.org/
 BuildRequires:	libogg-devel >= 1:1.3
 BuildRequires:	openssl-devel
