@@ -8,7 +8,7 @@ Group:		Libraries
 Source0:	http://downloads.xiph.org/releases/opus/%{name}-%{version}.tar.gz
 # Source0-md5:	78ad26f75900dc8428d75e6e4256196d
 URL:		http://opus-codec.org/
-BuildRequires:	libogg-devel >= 1:1.3
+BuildRequires:	libogg-devel >= 2:1.3
 BuildRequires:	openssl-devel
 BuildRequires:	opus-devel >= 1.0.1
 BuildRequires:	pkgconfig
@@ -27,7 +27,7 @@ Summary:	Header files for opusfile library
 Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki opusfile
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
-Requires:	libogg-devel >= 1:1.3
+Requires:	libogg-devel >= 2:1.3
 Requires:	openssl-devel
 Requires:	opus-devel >= 1.0.1
 
