@@ -1,12 +1,14 @@
 Summary:	Library for decoding .opus files, including seeking support
 Summary(pl.UTF-8):	Biblioteka do dekodowania plików .opus wraz z obsługą przewijania
 Name:		opusfile
-Version:	0.8
+Version:	0.10
 Release:	1
 License:	BSD
 Group:		Libraries
-Source0:	http://downloads.xiph.org/releases/opus/%{name}-%{version}.tar.gz
-# Source0-md5:	78ad26f75900dc8428d75e6e4256196d
+# mirrored at
+#Source0:	http://downloads.xiph.org/releases/opus/%{name}-%{version}.tar.gz
+Source0:	https://archive.mozilla.org/pub/opus/%{name}-%{version}.tar.gz
+# Source0-md5:	ab3f7d15d766f5b36b0951ee435f9ebf
 URL:		http://opus-codec.org/
 BuildRequires:	libogg-devel >= 2:1.3
 BuildRequires:	openssl-devel
@@ -63,6 +65,9 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
+# obsoleted by pkg-config
+%{__rm} $RPM_BUILD_ROOT%{_libdir}/libopus*.la
+
 # packaged as %doc
 %{__rm} -r $RPM_BUILD_ROOT%{_docdir}/opusfile
 
@@ -74,7 +79,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc AUTHORS COPYING README.txt
+%doc AUTHORS COPYING README.md
 %attr(755,root,root) %{_libdir}/libopusfile.so.*.*.*
 %attr(755,root,root) %ghost %{_libdir}/libopusfile.so.0
 %attr(755,root,root) %{_libdir}/libopusurl.so.*.*.*
@@ -85,8 +90,6 @@ rm -rf $RPM_BUILD_ROOT
 %doc doc/html/*
 %attr(755,root,root) %{_libdir}/libopusfile.so
 %attr(755,root,root) %{_libdir}/libopusurl.so
-%{_libdir}/libopusfile.la
-%{_libdir}/libopusurl.la
 %{_includedir}/opus/opusfile.h
 %{_pkgconfigdir}/opusfile.pc
 %{_pkgconfigdir}/opusurl.pc
