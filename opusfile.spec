@@ -2,7 +2,7 @@ Summary:	Library for decoding .opus files, including seeking support
 Summary(pl.UTF-8):	Biblioteka do dekodowania plików .opus wraz z obsługą przewijania
 Name:		opusfile
 Version:	0.10
-Release:	1
+Release:	2
 License:	BSD
 Group:		Libraries
 # mirrored at
