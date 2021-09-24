@@ -2,7 +2,7 @@ Summary:	Library for decoding .opus files, including seeking support
 Summary(pl.UTF-8):	Biblioteka do dekodowania plików .opus wraz z obsługą przewijania
 Name:		opusfile
 Version:	0.12
-Release:	1
+Release:	2
 License:	BSD
 Group:		Libraries
 Source0:	https://downloads.xiph.org/releases/opus/%{name}-%{version}.tar.gz
