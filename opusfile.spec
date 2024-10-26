@@ -2,7 +2,7 @@ Summary:	Library for decoding .opus files, including seeking support
 Summary(pl.UTF-8):	Biblioteka do dekodowania plików .opus wraz z obsługą przewijania
 Name:		opusfile
 Version:	0.12
-Release:	2
+Release:	3
 License:	BSD
 Group:		Libraries
 Source0:	https://downloads.xiph.org/releases/opus/%{name}-%{version}.tar.gz
@@ -12,6 +12,7 @@ BuildRequires:	libogg-devel >= 2:1.3
 BuildRequires:	openssl-devel
 BuildRequires:	opus-devel >= 1.0.1
 BuildRequires:	pkgconfig
+BuildRequires:	rpm-build >= 4.6
 Requires:	libogg >= 1:1.3
 Requires:	opus >= 1.0.1
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -49,6 +50,18 @@ Static opusfile library.
 %description static -l pl.UTF-8
 Statyczna biblioteka opusfile.
 
+%package apidocs
+Summary:	API documentation for opusfile library
+Summary(pl.UTF-8):	Dokumentacja API biblioteki opusfile
+Group:		Documentation
+BuildArch:	noarch
+
+%description apidocs
+API documentation for opusfile library.
+
+%description apidocs -l pl.UTF-8
+Dokumentacja API biblioteki opusfile.
+
 %prep
 %setup -q
 
@@ -85,7 +98,6 @@ rm -rf $RPM_BUILD_ROOT
 
 %files devel
 %defattr(644,root,root,755)
-%doc doc/html/*
 %attr(755,root,root) %{_libdir}/libopusfile.so
 %attr(755,root,root) %{_libdir}/libopusurl.so
 %{_includedir}/opus/opusfile.h
@@ -96,3 +108,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %{_libdir}/libopusfile.a
 %{_libdir}/libopusurl.a
+
+%files apidocs
+%defattr(644,root,root,755)
+%doc doc/html/{search,*.css,*.html,*.js,*.png,*.svg}
